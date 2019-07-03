@@ -13,6 +13,7 @@ export const mutations = {
 export const actions = {
   fetchPage({ commit }, { app, route, error }) {
 
+    // @todo check for existing data, if so skip
     const response = app.$wp
       .slug()
       .name(route.params.single)
