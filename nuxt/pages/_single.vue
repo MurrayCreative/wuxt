@@ -1,24 +1,28 @@
 <template>
-  <Page v-if="single.type === 'page'" :page="single"/>
-  <Post v-else :post="single"/>
+  <Page v-if="single.type === 'page'" :page="single" />
+  <Post v-else :post="single" />
 </template>
 
 <script>
 import Page from '~/components/templates/Page'
 import Post from '~/components/templates/Post'
+import { mapState } from 'vuex'
 
 export default {
-  async asyncData(context) {
-    const { route, app, error } = context
-
+  async fetch({ store, error, app, route }) {
     try {
-      const single = await app.$wp.slug().name(route.params.single)
-      return { single }
+      await store.dispatch('page/fetchPage', { app: app, route: route })
     } catch (e) {
-      error(e)
+      // @todo add formal error handlers
+      console.log(e.message)
     }
   },
-
+  computed: mapState({
+    single: state => {
+      console.log(state.single)
+      return state.page.single
+    }
+  }),
   components: {
     Page,
     Post
