@@ -1,0 +1,5 @@
+{
+  "/wp-json/wuxt/v1/slug/:slug": "/slugs?slug=:slug&singular=1",
+  "/wp-json/wuxt/v1/*": "/$1",
+  "/wp-json/wuxt/v2/*": "/$1"
+}
