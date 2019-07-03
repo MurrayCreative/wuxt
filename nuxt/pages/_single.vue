@@ -11,7 +11,7 @@ import { mapState } from 'vuex'
 export default {
   async fetch({ store, error, app, route }) {
     try {
-      await store.dispatch('page/fetchPage', { app: app, route: route })
+      await store.dispatch('page/fetchPage',{ app: app, route: route, error: error })
     } catch (e) {
       // @todo add formal error handlers
       console.log(e.message)
@@ -19,7 +19,6 @@ export default {
   },
   computed: mapState({
     single: state => {
-      console.log(state.single)
       return state.page.single
     }
   }),

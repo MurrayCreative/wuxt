@@ -11,13 +11,22 @@ export const mutations = {
 }
 
 export const actions = {
-  fetchPage({ commit }, { app, route }) {
-    return app.$wp
+  fetchPage({ commit }, { app, route, error }) {
+
+    const response = app.$wp
       .slug()
       .name(route.params.single)
       .then(function(response) {
-        console.log(response)
         commit('SET_PAGE', response)
       })
+      .catch(e => {
+        console.error(e.message)
+        error({
+          statusCode: 500,
+          message: 'Woops there was a problem, please try again later'
+        })
+      })
+
+    return response
   }
 }
