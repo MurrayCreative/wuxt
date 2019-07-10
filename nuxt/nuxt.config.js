@@ -20,7 +20,7 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#333' },
+  loading: { color: '#000', height: '5px' },
 
   /*
    ** Global CSS
@@ -30,7 +30,10 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~/plugins/wp-api-docker-connector', ssr: false }],
+  plugins: [
+    { src: '~/plugins/wp-api-docker-connector', ssr: false },
+    { src: '~/plugins/material-kit', ssr: false }
+  ],
 
   /*
    ** Nuxt.js modules
@@ -43,7 +46,7 @@ module.exports = {
     [
       '~/modules/wp-api/index',
       {
-        endpoint: 'http://wp.wuxt:80/wp-json/'
+        endpoint: 'http://localhost:3080/wp-json/'
       }
     ]
   ],
@@ -77,7 +80,7 @@ module.exports = {
   generate: {
     routes: function() {
       return axios
-        .get('http://wp.wuxt:80/wp-json/wuxt/v1/generate')
+        .get('http://localhost:3080/wp-json/wuxt/v1/generate')
         .then(({ data }) => data)
     }
   }

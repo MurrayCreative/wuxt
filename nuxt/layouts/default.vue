@@ -1,30 +1,36 @@
 <template>
-  <div>
-    <header class="header">
-      <Logo/>
-
-      <nav class="header__nav">
-        <nuxt-link to="/hello-world">Hello World</nuxt-link>
-        <nuxt-link to="/sample-page">Sample Page</nuxt-link>
-      </nav>
+  <main class="wrapper">
+    <!-- header -->
+    <header>
+      <MCHeader></MCHeader>
     </header>
-    <nuxt class="container"/>
-  </div>
+    <!-- end header -->
+
+    <!-- main content container -->
+    <main>
+      <nuxt class="container" />
+    </main>
+    <!-- end main content container -->
+
+    <!-- footer -->
+    <MCFooter></MCFooter>
+    <!-- end footer -->
+  </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo'
+import MCHeader from '~/components/sections/MCHeader'
+import MCFooter from '~/components/sections/MCFooter'
 
 export default {
   components: {
-    Logo
+    MCHeader,
+    MCFooter
   }
 }
 </script>
 
-
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Nunito:700,600,400|Open+Sans:400,700');
 $primary: #37495c;
 $secondary: #48b884;
 
