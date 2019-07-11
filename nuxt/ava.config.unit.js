@@ -5,5 +5,5 @@ export default {
   files: ['./test/specs/**/*.js'],
   cache: true,
   concurrency: 5,
-  failFast: true,
+  failFast: true
 }
