@@ -1,15 +1,11 @@
 <template>
   <main class="wrapper">
     <!-- header -->
-    <header>
-      <MCHeader></MCHeader>
-    </header>
+    <MCHeader></MCHeader>
     <!-- end header -->
 
     <!-- main content container -->
-    <main>
-      <nuxt class="container" />
-    </main>
+    <nuxt />
     <!-- end main content container -->
 
     <!-- footer -->

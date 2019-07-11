@@ -24,6 +24,7 @@
 @import "material-kit/plugins/_plugin-nouislider";
 
 // Core CSS
+@import "material-kit/spacing";
 @import "material-kit/typography";
 @import "material-kit/buttons";
 @import "material-kit/carousel";
@@ -84,3 +85,6 @@
 @import "material-kit/cards";
 @import "material-kit/tabs";
 @import "material-kit/responsive";
+
+// app overrides
+@import "app";

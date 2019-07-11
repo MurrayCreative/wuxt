@@ -9,6 +9,7 @@
         'md-transparent': navbarTransparent
       }"
       :color-on-scroll="colorOnScroll"
+      class="navigation"
     >
       <div class="md-toolbar-row md-collapse-lateral">
         <div class="md-toolbar-section-start">
@@ -311,3 +312,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scopedw>
+  .navigation {
+    margin-bottom: 0;
+  }
+</style>

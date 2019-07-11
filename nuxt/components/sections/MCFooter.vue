@@ -1,11 +1,12 @@
+<script src="../../server/index.js"></script>
 <template>
   <footer class="footer footer-white">
     <div class="container flex-direction-row">
-      <a class="footer-brand" href="http://www.creative-tim.com">Material Kit PRO</a>
+      <a class="footer-brand" href="http://www.creative-tim.com">Murray Creative Nuxt</a>
       <ul>
         <li>
           <a href="javascript:void(0)">
-            Creative Tim
+            Creative
           </a>
         </li>
         <li>
