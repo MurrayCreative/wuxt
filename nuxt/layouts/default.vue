@@ -87,12 +87,6 @@ h6 {
   }
 
   &__content {
-    * {
-      &:nth-child(1n + 2) {
-        margin-top: 1rem;
-      }
-    }
-
     p {
       line-height: 1.8rem;
     }

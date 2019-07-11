@@ -29,88 +29,88 @@
 </template>
 
 <script>
-  export default {
-    name: "headers",
-    data() {
-      return {
-        companyName: null,
-        companyEmail: null,
-        companyPassword: null,
-        toggledClass: false,
-        headerImages: {
-          Image1: require("@/assets/img/placeholder.jpg"),
-          Image2: require("@/assets/img/placeholder.jpg"),
-          Image3: require("@/assets/img/placeholder.jpg"),
-          Image4: require("@/assets/img/placeholder.jpg"),
-          Image5: require("@/assets/img/placeholder.jpg")
-        }
-      };
-    },
-    methods: {
-      header(nr) {
-        return {
-          backgroundImage: `url(${this.headerImages[`Image${nr}`]})`
-        };
-      },
-      bodyClick() {
-        let bodyClick = document.getElementById("bodyClick");
-
-        if (bodyClick === null) {
-          let body = document.querySelector("body");
-          let elem = document.createElement("div");
-          elem.setAttribute("id", "bodyClick");
-          body.appendChild(elem);
-
-          let bodyClick = document.getElementById("bodyClick");
-          bodyClick.addEventListener("click", this.toggleNavbarMobile);
-        } else {
-          bodyClick.remove();
-        }
-      },
-      toggleNavbarMobile() {
-        this.NavbarStore.showNavbar = !this.NavbarStore.showNavbar;
-        this.toggledClass = !this.toggledClass;
-        this.bodyClick();
+export default {
+  name: 'Headers',
+  data() {
+    return {
+      companyName: null,
+      companyEmail: null,
+      companyPassword: null,
+      toggledClass: false,
+      headerImages: {
+        Image1: require('@/assets/img/placeholder.jpg'),
+        Image2: require('@/assets/img/placeholder.jpg'),
+        Image3: require('@/assets/img/placeholder.jpg'),
+        Image4: require('@/assets/img/placeholder.jpg'),
+        Image5: require('@/assets/img/placeholder.jpg')
       }
     }
-  };
+  },
+  methods: {
+    header(nr) {
+      return {
+        backgroundImage: `url(${this.headerImages[`Image${nr}`]})`
+      }
+    },
+    bodyClick() {
+      const bodyClick = document.getElementById('bodyClick')
+
+      if (bodyClick === null) {
+        const body = document.querySelector('body')
+        const elem = document.createElement('div')
+        elem.setAttribute('id', 'bodyClick')
+        body.appendChild(elem)
+
+        const bodyClick = document.getElementById('bodyClick')
+        bodyClick.addEventListener('click', this.toggleNavbarMobile)
+      } else {
+        bodyClick.remove()
+      }
+    },
+    toggleNavbarMobile() {
+      this.NavbarStore.showNavbar = !this.NavbarStore.showNavbar
+      this.toggledClass = !this.toggledClass
+      this.bodyClick()
+    }
+  }
+}
 </script>
 
 <style lang="scss">
-  .buttons {
-    display: flex;
-    align-items: center;
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.hero {
+  .el-carousel__container {
+    height: 100vh !important;
   }
 
-  .hero {
-    .el-carousel__container {
-      height: 100vh !important;
-    }
-
-    .el-carousel {
-      border-radius: 0 !important;
-    }
+  .el-carousel {
+    border-radius: 0 !important;
   }
+}
 
-  .text-right {
-    text-align: right;
-  }
+.text-right {
+  text-align: right;
+}
 
-  .border-radius-0 {
-    border-radius: 0;
-  }
+.border-radius-0 {
+  border-radius: 0;
+}
 
-  .pb-0 {
-    padding-bottom: 0 !important;
-  }
+.pb-0 {
+  padding-bottom: 0 !important;
+}
 
-  .pt-0 {
-    padding-top: 0 !important;
-  }
+.pt-0 {
+  padding-top: 0 !important;
+}
 
-  @media all and (max-width: 960px) {
-    .md-card-form-horizontal .md-layout-item {
-      margin-top: 1.5rem;
-    }
+@media all and (max-width: 960px) {
+  .md-card-form-horizontal .md-layout-item {
+    margin-top: 1.5rem;
   }
+}
 </style>

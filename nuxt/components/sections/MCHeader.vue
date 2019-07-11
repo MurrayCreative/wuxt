@@ -313,7 +313,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scopedw>
+<style lang="scss" scoped>
   .navigation {
     margin-bottom: 0;
   }
