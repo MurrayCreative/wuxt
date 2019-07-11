@@ -6,6 +6,7 @@ if (process.env.TEST === 'unit' || process.env.TEST === 'update') {
   const Vue = require('vue')
 
   Vue.config.productionTip = false
+  Vue.config.devtools = false
   // https://github.com/nuxt/create-nuxt-app/issues/180#issuecomment-463069941
   window.Date = global.Date = Date
 }
@@ -13,6 +14,7 @@ if (process.env.TEST === 'unit' || process.env.TEST === 'update') {
 if (process.env.TEST === 'e2e') {
   const Vue = require('vue')
   Vue.config.productionTip = false
+  Vue.config.devtools = false
 }
 
 // Setup vue files to be processed by `require-extension-hooks-vue`
