@@ -2,8 +2,7 @@
   <nuxt-link to="/">
     <img src="/wuxt-logo.svg">
     <p>
-      WUXT
-      <span>JS</span>
+      WUXT<span>JS</span>
     </p>
   </nuxt-link>
 </template>

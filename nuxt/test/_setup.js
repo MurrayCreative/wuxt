@@ -1,6 +1,6 @@
 const hooks = require('require-extension-hooks')
 
-if (process.env.TEST === 'unit') {
+if (process.env.TEST === 'unit' || process.env.TEST === 'update') {
   require('jsdom-global')()
   require('browser-env')
   const Vue = require('vue')
