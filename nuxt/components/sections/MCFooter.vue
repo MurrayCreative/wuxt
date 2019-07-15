@@ -1,4 +1,3 @@
-<script src="../../server/index.js"></script>
 <template>
   <footer class="footer footer-white">
     <div class="container flex-direction-row">

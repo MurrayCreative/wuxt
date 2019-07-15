@@ -22,10 +22,9 @@
                 CEO @ Marketing Digital Ltd.
               </h6>
               <h5 class="card-description">
-                "I speak yell scream directly at the old guard on behalf of
-                the future. I gotta say at that time I’d like to meet Kanye I
-                speak yell scream directly at the old guard on behalf of the
-                future."
+                "I speak yell scream directly at the old guard on behalf of the
+                future. I gotta say at that time I’d like to meet Kanye I speak
+                yell scream directly at the old guard on behalf of the future."
               </h5>
             </template>
           </testimonial-card>
@@ -42,10 +41,10 @@
               <h6 class="card-category text-muted">Marketing @ Apple Inc.</h6>
               <h5 class="card-description">
                 "I promise I will never let the people down. I want a better
-                life for all!!! Pablo Pablo Pablo Pablo! Thank you Anna for
-                the invite thank you to the whole Vogue team It wasn’t any
-                Kanyes I love Rick Owens’ bed design but the back is too high
-                for the beams and angle of the ceiling"
+                life for all!!! Pablo Pablo Pablo Pablo! Thank you Anna for the
+                invite thank you to the whole Vogue team It wasn’t any Kanyes I
+                love Rick Owens’ bed design but the back is too high for the
+                beams and angle of the ceiling"
               </h5>
             </template>
           </testimonial-card>
@@ -75,42 +74,42 @@
 </template>
 
 <script>
-  import {TestimonialCard} from "@/components/modules";
+import { TestimonialCard } from '@/components/modules'
 
-  export default {
-    name: "testimonials",
-    components: {
-      TestimonialCard
-    },
-    data() {
-      return {
-        testimonials1: require("@/assets/img/placeholder.jpg"),
-        sectionTestimonials1: {
-          testimonials1: require("@/assets/img/placeholder.jpg"),
-          testimonials2: require("@/assets/img/placeholder.jpg"),
-          testimonials3: require("@/assets/img/placeholder.jpg")
-        },
-        sectionTestimonials2: {
-          testimonials1: require("@/assets/img/placeholder.jpg"),
-          testimonials2: require("@/assets/img/placeholder.jpg")
-        },
-        sectionTestimonials3: {
-          testimonials1: require("@/assets/img/placeholder.jpg")
-        }
-      };
-    },
-    methods: {
-      sectionTestimonials(image) {
-        return {
-          backgroundImage: `url(${image})`
-        };
+export default {
+  name: 'Testimonials',
+  components: {
+    TestimonialCard
+  },
+  data() {
+    return {
+      testimonials1: require('@/assets/img/placeholder.jpg'),
+      sectionTestimonials1: {
+        testimonials1: require('@/assets/img/placeholder.jpg'),
+        testimonials2: require('@/assets/img/placeholder.jpg'),
+        testimonials3: require('@/assets/img/placeholder.jpg')
+      },
+      sectionTestimonials2: {
+        testimonials1: require('@/assets/img/placeholder.jpg'),
+        testimonials2: require('@/assets/img/placeholder.jpg')
+      },
+      sectionTestimonials3: {
+        testimonials1: require('@/assets/img/placeholder.jpg')
       }
     }
-  };
+  },
+  methods: {
+    sectionTestimonials(image) {
+      return {
+        backgroundImage: `url(${image})`
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss">
-  .testimonials {
-    background-color: $grey-100;
-  }
+.testimonials {
+  background-color: $grey-100;
+}
 </style>

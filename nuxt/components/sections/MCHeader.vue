@@ -32,7 +32,7 @@
                 <!-- Here you can add your items from the section-start of your toolbar -->
               </mobile-menu>
               <md-list>
-                <li class="md-list-item" v-if="showDownload">
+                <li v-if="showDownload" class="md-list-item">
                   <a
                     href="javascript:void(0)"
                     class="md-list-item-router md-list-item-container md-button-clean dropdown"
@@ -71,7 +71,7 @@
                     </div>
                   </a>
                 </li>
-                <li class="md-list-item" v-if="!showDownload">
+                <li v-if="!showDownload" class="md-list-item">
                   <a
                     href="javascript:void(0)"
                     class="md-list-item-router md-list-item-container md-button-clean dropdown"
@@ -266,6 +266,12 @@ export default {
       return excludedRoutes.every(r => r !== this.$route.name)
     }
   },
+  mounted() {
+    document.addEventListener('scroll', this.scrollListener)
+  },
+  beforeDestroy() {
+    document.removeEventListener('scroll', this.scrollListener)
+  },
   methods: {
     bodyClick() {
       const bodyClick = document.getElementById('bodyClick')
@@ -303,18 +309,12 @@ export default {
     scrollListener() {
       resizeThrottler(this.handleScroll)
     }
-  },
-  mounted() {
-    document.addEventListener('scroll', this.scrollListener)
-  },
-  beforeDestroy() {
-    document.removeEventListener('scroll', this.scrollListener)
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .navigation {
-    margin-bottom: 0;
-  }
+.navigation {
+  margin-bottom: 0;
+}
 </style>

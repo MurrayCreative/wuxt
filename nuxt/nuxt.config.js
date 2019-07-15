@@ -10,17 +10,17 @@ module.exports = {
   head: {
     title: pkg.name,
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: pkg.description}
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   /*
    ** Customize the progress-bar color
    */
-  loading: {color: '#000', height: '5px'},
+  loading: { color: '#000', height: '5px' },
 
   /*
    ** Global CSS
@@ -31,8 +31,8 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    {src: '@/plugins/wp-api-docker-connector', ssr: false},
-    {src: '@/plugins/material-kit', ssr: false}
+    { src: '@/plugins/wp-api-docker-connector', ssr: false },
+    { src: '@/plugins/material-kit', ssr: false }
   ],
 
   /*
@@ -82,10 +82,10 @@ module.exports = {
   },
 
   generate: {
-    routes: function () {
+    routes: function() {
       return axios
         .get('http://localhost:3080/wp-json/wuxt/v1/generate')
-        .then(({data}) => data)
+        .then(({ data }) => data)
     }
   }
 }

@@ -9,11 +9,11 @@
 </style>
 
 <script>
-  import Hero from '~/components/modules/Hero'
+import Hero from '~/components/modules/Hero'
 
-  export default {
-    components: {
-      Hero
-    }
+export default {
+  components: {
+    Hero
   }
+}
 </script>
