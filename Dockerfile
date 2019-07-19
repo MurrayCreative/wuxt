@@ -10,7 +10,11 @@ RUN apt-get update && \
      libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 \
      libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 \
      libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates \
-     fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
+     fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils curl gnupg wget software-properties-common
+
+
+# set up gpg keys
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 
 # grab library
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
@@ -24,11 +28,12 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.s
 # set up nvm env variables
 RUN export NVM_DIR="$HOME/.nvm"
 
-# install docker
-RUN apt-get -y remove docker docker-engine docker.io
+# get docker repository
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+RUN apt-get update
 
 # install docker
-RUN apt -y install docker.io
+RUN apt-get -y install docker-ce docker-ce-cli containerd.io
 
 # install docker compose
 RUN echo "Installing Docker Compose"

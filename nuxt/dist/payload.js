@@ -1,0 +1,1 @@
+window.__NUXT__={layout:"default",data:[{}],error:null,state:{page:{single:{}}},serverRendered:!0}

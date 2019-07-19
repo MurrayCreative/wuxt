@@ -46,7 +46,7 @@ module.exports = {
     [
       '~/modules/wp-api/index',
       {
-        endpoint: 'http://localhost:3080/wp-json/'
+        endpoint: process.env.WP_API_URL || 'http://localhost:3080/wp-json/'
       }
     ],
     '@nuxtjs/style-resources'
